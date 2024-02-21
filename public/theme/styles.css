@@ -36,9 +36,12 @@ em {
 /* ## Header */
 
 .site-header .site-title {
-  font-size: 5rem;
-  margin: 64px auto;
-  text-align: center;
+  display: none;
+}
+
+.site-header .site-header-logo {
+  display: block;
+  max-width: 100%;
 }
 
 /* ### Header bar */
