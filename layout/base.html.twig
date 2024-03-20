@@ -36,7 +36,6 @@
   </head>
   <body>
     {% include "layout:_overall_menu.html.twig" %}
-    {% include "layout:_flash_messages.html.twig" %}
 
     <header class="site-header">
       <div class="header-bar">
@@ -133,32 +132,60 @@
         </div>
       </nav>
     </header>
+
     <main class="site-main">
+      {% include "layout:_flash_messages.html.twig" %}
       {% block main %}{% endblock %}
     </main>
+
     <footer class="site-footer">
-      <div class="footer-block footer-links">
+      <div class="footer-blocks">
+        <div class="footer-block diffuseur-logo">
+          <a href="https://www.daudin-distribution.fr/article-39466-le-baiser-du-frelon.aspx">
+            <img
+              src="/theme/logo-dod.webp"
+              alt="Logo DOD & Cie Diffusion Distribution"
+              height="120"
+              width="308"
+            >
+          </a>
+        </div>
+
+        <div class="footer-block footer-newsletter">
+          <p>
+            <span class="fa fa-envelope"></span>
+            <strong>Recevez notre newsletter</strong>
+          </p>
+          <form class="center" method="post" action="/mailing/subscribe">
+            <fieldset class="footer-newsletter-form">
+              <input type="email" name="email" placeholder="Entrez votre e-mail" class="form-control">
+              <input class="btn btn-info btn-sm btn-block" type="submit" value="S'inscrire">
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="footer-block publisher-infos">
+          <img
+            src="/theme/logo.jpg"
+            alt="Logo Le Baiser du frelon"
+            class="publisher-logo"
+            height="581"
+            width="464"
+          >
+          <p>
+            7, rue du Progrès<br />
+            93100 Montreuil<br />
+            <a href="/contact/">Contact</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-links">
         <ul>
-          <li><a href="/page/a-propos">À propos</a></li>
           <li><a href="/page/mentions-legales">Mentions légales</a></li>
           <li><a href="/page/conditions-generales-de-vente">Conditions générales de vente</a></li>
+          <li><a href="https://www.biblys.fr/">Propulsé par Biblys</a></li>
         </ul>
-      </div>
-
-      <div class="footer-block footer-biblys-logo">
-        <a href="https://www.biblys.fr/" target="_blank" rel="noreferrer noopener">
-          <img src="/assets/images/propulse-par-biblys.png" alt="Propulsé par Biblys" class="biblys-logo">
-        </a>
-      </div>
-
-      <div class="footer-block footer-newsletter">
-        <p>Recevoir notre newsletter :</p>
-        <form class="center" method="post" action="/mailing/subscribe">
-          <fieldset>
-            <input type="email" name="email" placeholder="Votre adresse e-mail" class="form-control">
-            <input class="btn btn-info btn-sm btn-block" type="submit" value="S'abonner">
-          </fieldset>
-        </form>
       </div>
     </footer>
     {% include "layout:_assets_js.html.twig" %}

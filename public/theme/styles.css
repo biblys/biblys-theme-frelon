@@ -1,6 +1,7 @@
 :root {
   --grey-15: rgba(0, 0, 0, 0.15);
   --grey-25: rgba(0, 0, 0, 0.25);
+  --grey-50: rgba(0, 0, 0, 0.50);
   --red: #DC0D13;
 }
 
@@ -27,7 +28,7 @@ em {
 
 .site-header,
 .site-main,
-.site-footer {
+.footer-blocks {
   box-sizing: border-box;
   padding: 0 16px;
   margin: 0 auto;
@@ -167,20 +168,68 @@ em {
 /* ## Main */
 
 .site-main {
-  border-top: 1px solid var(--grey-25);
-  border-bottom: 1px solid var(--grey-25);
   margin: 16px auto;
   padding: 16px;
 }
 
 /* ## Footer */
 
+.site-footer {
+  border-top: 1px solid var(--grey-50);
+  padding-top: 16px;
+}
+
+.site-footer img {
+  display: block;
+  height: auto;
+  margin: auto;
+  max-width: 200px;
+}
+
+.site-footer .footer-blocks {
+  padding: 0 16px;
+}
+
 .site-footer .footer-block {
   margin-bottom: 16px;
 }
 
+.site-footer .footer-newsletter-form {
+  display: flex;
+  gap: 8px;
+}
+
+.site-footer .footer-newsletter-form .form-control {
+  width: 70%;
+}
+
+.site-footer .footer-newsletter-form .btn {
+  width: 30%;
+}
+
+.site-footer .publisher-infos {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.site-footer .publisher-infos .publisher-logo {
+  max-width: 100px;
+  margin-right: 8px;
+}
+
+.site-footer .footer-links {
+  border-top: 1px solid var(--grey-50);
+  padding: 16px 0;
+}
+
+.site-footer .footer-links ul {
+  text-align: center;
+}
+
 @media(min-width: 768px) {
-  .site-footer {
+  .site-footer .footer-blocks {
+    align-items: center;
     display: flex;
     justify-content: space-between;
   }
@@ -189,8 +238,14 @@ em {
     width: 240px;
   }
 
-  .site-footer .footer-biblys-logo {
-    text-align: center;
+  .site-footer .footer-links li {
+    display: inline;
+    padding: 0 6px 0 2px;
+    border-right: 1px solid black;
+  }
+
+  .site-footer .footer-links li:last-child {
+    border-right: 0;
   }
 }
 
