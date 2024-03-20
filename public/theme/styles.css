@@ -177,6 +177,8 @@ em {
 .site-footer {
   border-top: 1px solid var(--grey-50);
   padding-top: 16px;
+  margin: 0 auto;
+  max-width: 1024px;
 }
 
 .site-footer img {
