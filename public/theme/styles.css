@@ -227,6 +227,8 @@ em {
 }
 
 .site-footer .footer-newsletter-form .btn {
+  border-color: var(--red);
+  background-color: var(--red);
   width: 30%;
 }
 
