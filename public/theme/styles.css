@@ -88,7 +88,7 @@ em {
   background: black;
 }
 
-@media(min-width: 1024px) {
+@media(min-width: 768px) {
   .site-header {
     padding: 16px;
     position: relative;
