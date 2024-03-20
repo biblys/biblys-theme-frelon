@@ -69,14 +69,24 @@
           </a>
         {% endif %}
         <div class="home-page-article__infos">
-          <p class="home-page-article__authors">
-            {{ article.authors|authors }}
-          </p>
+          {% if article.has('cycle') %}
+            <p>
+              <a href="{{ path('cycle_show', {slug: article.cycle.url}) }}">
+                {{ article.cycle.name }}
+              </a>
+              {% if article.has('tome') %}
+                · tome {{ article.tome }}
+              {% endif %}
+            </p>
+          {% endif %}
           <h1 class="home-page-article__title">
             <a href="{{ path('article_show', {slug: article.url}) }}">
               {{ article.title }}
             </a>
           </h1>
+          <p class="home-page-article__authors">
+            {{ article.authors|authors }}
+          </p>
           {% if article.has('catchline') %}
             <div class="home-page-article__catchline">
               {{ article.catchline|raw }}
