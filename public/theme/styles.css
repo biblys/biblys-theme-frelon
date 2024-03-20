@@ -37,6 +37,10 @@ em {
 
 /* ## Header */
 
+.site-header {
+  padding-bottom: 0;
+}
+
 .site-header .site-title {
   display: none;
 }
@@ -91,6 +95,7 @@ em {
 @media(min-width: 768px) {
   .site-header {
     padding: 16px;
+    padding-bottom: 0;
     position: relative;
   }
 
@@ -112,7 +117,7 @@ em {
 }
 
 .site-header .site-navigation {
-  margin-top: 8px;
+  margin: 8px 0 0;
   display: flex;
   flex-direction: column;
   font-weight: bold;
@@ -184,7 +189,7 @@ em {
 /* ## Main */
 
 .site-main {
-  margin: 16px auto;
+  margin: auto;
   padding: 16px;
 }
 
@@ -193,7 +198,7 @@ em {
 .site-footer {
   border-top: 1px solid var(--grey-50);
   padding-top: 16px;
-  margin: 0 auto;
+  margin: 16px auto;
   max-width: 1024px;
 }
 
