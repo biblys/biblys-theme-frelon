@@ -39,47 +39,49 @@
     {% include "layout:_flash_messages.html.twig" %}
 
     <header class="site-header">
-      <a href="/">
-        <img src="/theme/header.jpg"
-          alt="Logo Le Baiser du Frelon avec le slogan 'Des mots qui piquent, des idées qui libèrent'"
-          class="site-header-logo"
-        />
-        <h1 class="site-title">{{ app.currentSite.site.title }}</h1>
-      </a>
       <div class="header-bar">
-        <div class="social-networks">
-          <a class="social-button" href="https://www.facebook.com/biblys" target="_blank" rel="noreferrer noopener">
-            <span aria-label="Facebook" class="fa fa-facebook-square"></span>
-          </a>
-
-          <a class="social-button" href="https://twitter.com/biblys" target="_blank" rel="noreferrer noopener">
-            <span aria-label="Twitter" class="fa fa-twitter-square"></span>
-          </a>
-
-          <a class="social-button" href="https://www.instagram.com/jiffpom/" target="_blank" rel="noreferrer noopener">
-            <span aria-label="Instagram" class="fa fa-instagram"></span>
-          </a>
-        </div>
+        <form action="/articles/search" class="search-engine">
+          <input
+            type="text"
+            name="q"
+            placeholder="Rechercher"
+            aria-label="Rechercher un article"
+            class="search-engine-input"
+            required="required"
+          />
+          <button aria-label="Rechercher" type="submit" class="search-engine-button">
+            OK
+          </button>
+        </form>
 
         <div class="cart-button">
           {{ cart_status()|raw }}
         </div>
 
-        <form action="/articles/search" class="search-engine">
-          <input
-              type="text"
-              name="q"
-              placeholder="Rechercher un article…"
-              aria-label="Rechercher un article"
-              class="search-engine-input"
-              required="required"
-          />
-          <button aria-label="Rechercher" type="submit" class="search-engine-button">
-            <span class="fa fa-search"></span>
-          </button>
-        </form>
+        <div class="social-networks">
+          <a class="social-button" href="/mailing/subscribe">
+            <span aria-label="Inscription à la newsletter" class="fa fa-envelope"></span>
+          </a>
+
+          <a class="social-button" href="https://instagram.com/">
+            <span aria-label="Instagram" class="fa fa-instagram"></span>
+          </a>
+
+          <a class="social-button" href="https://linkedin.com/">
+            <span aria-label="Linked In" class="fa fa-linkedin"></span>
+          </a>
+        </div>
       </div>
 
+      <a href="/">
+        <img src="/theme/header.jpg"
+          alt="Logo Le Baiser du Frelon avec le slogan 'Des mots qui piquent, des idées qui libèrent'"
+          class="site-header-logo"
+          width="1000"
+          height="250"
+        />
+        <h1 class="site-title">{{ app.currentSite.site.title }}</h1>
+      </a>
       <nav class="navbar site-navigation" role="navigation">
         <div class="navbar-header">
           <button
