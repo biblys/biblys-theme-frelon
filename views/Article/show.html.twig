@@ -15,6 +15,22 @@
           rel: "lightbox"
         } %}
       {% endif %}
+
+      {% if article.hasDownloadableFiles('free') %}
+        <p>
+          <a class="btn btn-default" data-toggle="collapse" href="#files">
+            <span class="fa fa-download"></span>
+            Télécharger un extrait</a>
+        </p>
+        <p></p>
+        <p class="collapse" id="files">
+          {% for file in article.getDownloadableFiles('free') %}
+            <a href="{{ file.getUrl() }}" class="btn btn-default btn-sm" download>
+              <span class="fa fa-file"></span>
+              {{ file.getType('name') }}</a>
+          {% endfor %}
+        </p>
+      {% endif %}
     </div>
 
     <div class="article__infos-column">

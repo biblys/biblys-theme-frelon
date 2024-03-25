@@ -368,6 +368,7 @@ em {
   }
 
   .article__cover-column {
+    text-align: center;
     width: 216px;
   }
 
