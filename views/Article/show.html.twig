@@ -25,7 +25,7 @@
         <p></p>
         <p class="collapse" id="files">
           {% for file in article.getDownloadableFiles('free') %}
-            <a href="{{ file.getUrl() }}" class="btn btn-default btn-sm" download>
+            <a href="{{ file.url }}" class="btn btn-default btn-sm" download="{{ article.url }}{{ file.getType('ext') }}">
               <span class="fa fa-file"></span>
               {{ file.getType('name') }}</a>
           {% endfor %}
