@@ -492,6 +492,10 @@ div.biblys-carousel .swiper-pagination-bullet-active {
   border-color: var(--red);
 }
 
+.biblys-carousel .carousel-image {
+  height: auto;
+}
+
 .home-page-articles {
   margin-top: 32px;
 }
