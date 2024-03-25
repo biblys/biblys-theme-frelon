@@ -1,0 +1,30 @@
+{% extends "layout:base.html.twig" %}
+
+{% block title %}
+  Collection {{ collection.name }}
+{% endblock %}
+
+{% block main %}
+  <h1 class="collection-page__title">
+    Collection
+    <span class="collection-page__title-name">
+      {{ collection.name }}
+    </span>
+  </h1>
+
+  {% if collection.has('desc') %}
+    <div class="collection-page__description">
+      {{ collection.desc|raw }}
+    </div>
+  {% endif %}
+
+  {% include 'AppBundle:Article:_list.html.twig' %}
+
+  {% if app.currentUser.isAdmin() %}
+    <div class="admin">
+      <p>Collection n° {{ collection.id }}</p>
+      <p><a href="{{ path('collection_edit', { id: collection.id }) }}">modifier</a></p>
+      <p><a href="{{ path('collection_delete', { id: collection.id }) }}">supprimer</a></p>
+    </div>
+  {% endif %}
+{% endblock %}

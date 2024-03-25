@@ -3,6 +3,8 @@
   --grey-25: rgba(0, 0, 0, 0.25);
   --grey-50: rgba(0, 0, 0, 0.50);
   --red: #DC0D13;
+
+  --grey-border: 1px solid var(--grey-25);
 }
 
 html {
@@ -73,7 +75,6 @@ em {
 }
 
 .site-header .header-bar .search-engine {
-  /*background: var(--grey-25);*/
   display: flex;
   font-size: inherit;
   margin-top: 4px;
@@ -84,6 +85,7 @@ em {
 
 .site-header .header-bar .search-engine-input {
   border: 1px solid var(--grey-25);
+  border: var(--grey-border);
   font-size: 1.6rem;
   margin-right: 4px;
   margin-top: 0;
@@ -99,8 +101,7 @@ em {
 
 @media(min-width: 768px) {
   .site-header {
-    padding: 16px;
-    padding-bottom: 0;
+    padding: 16px 16px 0;
     position: relative;
   }
 
@@ -194,6 +195,7 @@ em {
 /* ## Main */
 
 .site-main {
+  border-top: 1px solid var(--grey-25);
   margin: auto;
   padding: 16px;
 }
@@ -388,84 +390,54 @@ em {
 
 /* # Article list */
 
+.collection-page__title {
+  font-size: 2.5rem;
+  margin: 8px 0 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.collection-page__title-name {
+  color: var(--red);
+}
+
+.collection-page__description {
+  margin: auto;
+  max-width: 768px;
+}
+
 .article-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
   margin-top: 16px;
 }
 
 .article-in-list {
-  border-top: 1px solid var(--grey-15);
-  display: flex;
-  font-size: 1.5rem;
-  margin: 16px 0;
-  padding-top: 16px;
+  width: calc(50% - 8px);
 }
 
 .article-in-list__cover {
-  width: 96px;
 }
 
 .article-in-list__cover-image {
+  border: var(--grey-border);
   display: block;
   margin: 0 auto;
   max-width: 100%;
 }
 
-.article-in-list__infos-and-items {
-  width: 100%;
-}
-
-.article-in-list__infos {
-  padding: 0 8px;
-}
-
-.article-in-list__title {
-  font-size: 1.8rem;
-  margin: 0;
-}
-
-.article-in-list__cycle,
-.article-in-list__title,
-.article-in-list__authors {
-  margin-bottom: .5rem;
-}
-
-.article-in-list__collection-and-publisher {
-  display: none;
-}
-
-.article-in-list__available-new-item,
-.article-in-list__available-used-items {
-  text-align: center;
-}
-
-.article-in-list__available-new-item .cart-button {
-  margin-top: 2px;
-}
-
 @media(min-width: 768px) {
-  .article-in-list__cover {
-    width: 128px;
+  .article-list {
+    gap: 32px;
+    margin: 32px auto;
+    justify-content: space-between;
+    width: 700px;
   }
 
-  .article-in-list__infos-and-items {
-    display: flex;
-  }
-
-  .article-in-list__infos {
-    width: 100%;
-  }
-
-  .article-in-list__title {
-    font-size: 2.2rem;
-  }
-
-  .article-in-list__collection-and-publisher {
-    display: block;
-  }
-
-  .article-in-list__available-items {
-    flex-shrink: 0;
-    width: 152px;
+  .article-in-list {
+    width: 168px;
   }
 }
 
@@ -528,7 +500,7 @@ div.biblys-carousel .swiper-pagination-bullet-active {
 }
 
 .home-page-article__cover-image {
-  border: 1px solid var(--grey-25);
+  border: var(--grey-border);
   max-width: 100%;
 }
 
