@@ -17,17 +17,14 @@
       {% endif %}
 
       {% if article.hasDownloadableFiles('free') %}
-        <p>
-          <a class="btn btn-default" data-toggle="collapse" href="#files">
-            <span class="fa fa-download"></span>
-            Télécharger un extrait</a>
+        <p class="article__excerpt">
+          Lire un extrait
         </p>
-        <p></p>
-        <p class="collapse" id="files">
+        <p id="files">
           {% for file in article.getDownloadableFiles('free') %}
-            <a href="{{ file.url }}" class="btn btn-default btn-sm" download="{{ article.url }}{{ file.getType('ext') }}">
+            <a href="{{ file.url }}" class="btn btn-default btn-sm" target="_blank" rel="noreferrer noopener">
               <span class="fa fa-file"></span>
-              {{ file.getType('name') }}</a>
+              {{ file.title }}</a>
           {% endfor %}
         </p>
       {% endif %}
