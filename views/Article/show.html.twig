@@ -122,116 +122,144 @@
       </h2>
     </div>
 
-    {% if article.has('summary') %}
-      <div class="article__block">
-        <div class="article__block__content">
-          <h2 class="article__block__title">Résumé</h2>
+    <div class="article__block">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">Résumé</a>
+        </li>
+
+        {% if article.has('contents') %}
+          <li role="presentation">
+            <a href="#contents" aria-controls="contents" role="tab" data-toggle="tab">Sommaire</a>
+          </li>
+        {% endif %}
+
+        {% if article.has('biography') %}
+          <li role="presentation">
+            <a href="#biography" aria-controls="biography" role="tab" data-toggle="tab">L'auteur</a>
+          </li>
+        {% endif %}
+
+        {% if article.has('bonus') %}
+          <li role="presentation">
+            <a href="#bonus" aria-controls="bonus" role="tab" data-toggle="tab">Plus</a>
+          </li>
+        {% endif %}
+
+        <li role="presentation">
+          <a href="#features" aria-controls="bonus" role="tab" data-toggle="tab">Infos techniques</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="article__block__content tab-pane active" id="summary">
           {{ article.summary|raw }}
         </div>
-      </div>
-    {% endif %}
 
-    {% if article.has('contents') %}
-      <div class="article__block">
-        <div class="article__block__content">
-          <h2 class="article__block__title">Sommaire</h2>
-          {{ article.contents|raw }}
+        {% if article.has('contents') %}
+          <div role="tabpanel" class="article__block__content tab-pane" id="contents">
+            {{ article.contents|raw }}
+          </div>
+        {% endif %}
+
+        {% if article.has('biography') %}
+          <div role="tabpanel" class="article__block__content tab-pane" id="biography">
+            {{ article.biography|raw }}
+          </div>
+        {% endif %}
+
+        {% if article.has('bonus') %}
+          <div role="tabpanel" class="article__block__content tab-pane" id="bonus">
+            {{ article.bonus|raw }}
+          </div>
+        {% endif %}
+
+        <div role="tabpanel" class="article__block__content tab-pane" id="features">
+          <dl class="article__features">
+            {% if article.tags %}
+              <dt>Mots-clés</dt>
+              <dl>
+                {% for tag in article.tags %}
+                  <a href="{{ path('tag_show', { slug: tag.url }) }}">{{ tag.name }}</a>
+                  {% if not loop.last %}·{% endif %}
+                {% endfor %}
+              </dl>
+            {% endif %}
+            {% if article.has('collection') %}
+              <dt>Collection</dt>
+              <dl>
+                <a href="{{ path('collection_show', { slug: article.collection.url }) }}">
+                  {{ article.collection.name }}
+                </a>
+                {% if article.has('number') %} n° {{ article.number }} {% endif %}
+              </dl>
+            {% endif %}
+
+            {% if article.has('cycle') %}
+              <dt>Cycle</dt>
+              <dl>
+                <a href="{{ path('cycle_show', { slug: article.cycle.url }) }}">
+                  {{ article.cycle.name }}
+                </a>
+                {% if article.has('tome') %} · Tome {{ article.tome }} {% endif %}
+              </dl>
+            {% endif %}
+
+            {% if article.has('pubdate') %}
+              <dt>Date de parution</dt>
+              <dl>{{ article.pubdate|date }}</dl>
+            {% endif %}
+
+            {% if article.has('price') %}
+              <dt>Prix éditeur</dt>
+              <dl>{{ article.price|currency(true)|raw }}</dl>
+            {% endif %}
+
+            {% if article.has('ean') %}
+              <dt>ISBN</dt>
+              <dl>{{ article.ean|isbn }}</dl>
+
+              <dt>EAN</dt>
+              <dl>{{ article.ean }}</dl>
+            {% endif %}
+
+            {% if article.has('isbn') %}
+              <dt>ISBN</dt>
+              <dl>{{ article.isbn }}</dl>
+            {% endif %}
+
+            {% if article.has('shaping') %}
+              <dt>Façonnage</dt>
+              <dl>{{ article.shaping }}</dl>
+            {% endif %}
+
+            {% if article.has('printing_process') %}
+              <dt>Procédé d'impression</dt>
+              <dl>{{ article.printing_process }}</dl>
+            {% endif %}
+
+            {% if article.has('format') %}
+              <dt>Dimensions</dt>
+              <dl>{{ article.format }} format</dl>
+            {% endif %}
+
+            {% if article.has('pages') %}
+              <dt>Pagination</dt>
+              <dl>{{ article.pages }} pages</dl>
+            {% endif %}
+
+            {% if article.has('weight') %}
+              <dt>Poids</dt>
+              <dl>{{ article.weight }} g</dl>
+            {% endif %}
+          </dl>
         </div>
-      </div>
-    {% endif %}
-
-    {% if article.has('biography') %}
-      <div class="article__block">
-        <div class="article__block__content">
-          <h2 class="article__block__title">L'auteur</h2>
-          {{ article.biography|raw }}
-        </div>
-      </div>
-    {% endif %}
-
-    <div class="article__block">
-      <div class="article__block__content">
-        <h2 class="article__block__title">Infos Techniques</h2>
-        <dl class="article__features">
-          {% if article.tags %}
-            <dt>Mots-clés</dt>
-            <dl>
-              {% for tag in article.tags %}
-                <a href="{{ path('tag_show', { slug: tag.url }) }}">{{ tag.name }}</a>
-                {% if not loop.last %}·{% endif %}
-              {% endfor %}
-            </dl>
-          {% endif %}
-          {% if article.has('collection') %}
-            <dt>Collection</dt>
-            <dl>
-              <a href="{{ path('collection_show', { slug: article.collection.url }) }}">
-                {{ article.collection.name }}
-              </a>
-              {% if article.has('number') %} n° {{ article.number }} {% endif %}
-            </dl>
-          {% endif %}
-
-          {% if article.has('cycle') %}
-            <dt>Cycle</dt>
-            <dl>
-              <a href="{{ path('cycle_show', { slug: article.cycle.url }) }}">
-                {{ article.cycle.name }}
-              </a>
-              {% if article.has('tome') %} · Tome {{ article.tome }} {% endif %}
-            </dl>
-          {% endif %}
-
-          {% if article.has('pubdate') %}
-            <dt>Date de parution</dt>
-            <dl>{{ article.pubdate|date }}</dl>
-          {% endif %}
-
-          {% if article.has('price') %}
-            <dt>Prix éditeur</dt>
-            <dl>{{ article.price|currency(true)|raw }}</dl>
-          {% endif %}
-
-          {% if article.has('ean') %}
-            <dt>ISBN</dt>
-            <dl>{{ article.ean|isbn }}</dl>
-
-            <dt>EAN</dt>
-            <dl>{{ article.ean }}</dl>
-          {% endif %}
-
-          {% if article.has('isbn') %}
-            <dt>ISBN</dt>
-            <dl>{{ article.isbn }}</dl>
-          {% endif %}
-
-          {% if article.has('shaping') %}
-            <dt>Façonnage</dt>
-            <dl>{{ article.shaping }}</dl>
-          {% endif %}
-
-          {% if article.has('printing_process') %}
-            <dt>Procédé d'impression</dt>
-            <dl>{{ article.printing_process }}</dl>
-          {% endif %}
-
-          {% if article.has('format') %}
-            <dt>Dimensions</dt>
-            <dl>{{ article.format }} format</dl>
-          {% endif %}
-
-          {% if article.has('pages') %}
-            <dt>Pagination</dt>
-            <dl>{{ article.pages }} pages</dl>
-          {% endif %}
-
-          {% if article.has('weight') %}
-            <dt>Poids</dt>
-            <dl>{{ article.weight }} g</dl>
-          {% endif %}
-        </dl>
       </div>
     </div>
+
   </article>
 
   {% if app.currentUser.isAdmin %}
