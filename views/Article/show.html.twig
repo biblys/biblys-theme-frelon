@@ -123,17 +123,6 @@
           En prévente chez vos libraires
         {% endif %}
       </h2>
-
-      <p>
-        <a href="http://recherche.fnac.com/r/{{ article.ean }}">FNAC</a> ·
-        <a href="https://www.decitre.fr/livres/{{ article.ean }}.html">Decitre</a> ·
-        <a href="https://www.furet.com/livres/{{ article.ean }}.html">Le Furet du nord</a> ·
-        <a href="https://www.lalibrairie.com/">La Librairie</a> ·
-        <a href="https://www.eyrolles.com/Livre/{{ article.ean }}/">Eyrolles</a> ·
-        <a href="https://www.leslibraires.fr/recherche/?q={{ article.ean }}">Les libraires</a> ·
-        <a href="https://www.placedeslibraires.fr/dlivre.php?rid=&gencod={{ article.ean }}">Place des libraires</a>
-      </p>
-
     </div>
 
     {% if article.has('summary') %}
