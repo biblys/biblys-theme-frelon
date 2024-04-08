@@ -60,7 +60,7 @@
         {% endif %}
         <div class="home-page-article__infos">
           {% if article.has('cycle') %}
-            <p>
+            <p class="home-page-article__cycle">
               <a href="{{ path('cycle_show', {slug: article.cycle.url}) }}">
                 {{ article.cycle.name }}
               </a>
