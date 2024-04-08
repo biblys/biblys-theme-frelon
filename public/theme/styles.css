@@ -575,6 +575,26 @@ em {
   max-width: 100%;
 }
 
+.article-in-list__infos {
+  margin-top: 8px;
+}
+
+.article-in-list__infos p {
+  font-size: .7em;
+  margin: 0;
+  text-align: center;
+}
+
+.article-in-list__infos a {
+  color: black;
+}
+
+p.article-in-list__infos__publication-date {
+  margin-bottom: 10px;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
 @media (min-width: 768px) {
   .article-list {
     gap: 32px;

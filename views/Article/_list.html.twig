@@ -9,6 +9,26 @@
 					})|raw }}
 				{% endif %}
 			</div>
+
+			<div class="article-in-list__infos">
+				<p class="article-in-list__infos__publication-date">
+					En librairie le {{ article.pubdate|date('d f Y') }}
+				</p>
+
+				<p>
+					<a href="{{ path('article_show', { slug: article.url }) }}">
+						{{ article.title }}
+					</a>
+				</p>
+
+				<p>
+					{{ article.authors|authors('url') }}
+				</p>
+
+				<p>
+					{{ article.price|currency('EUR')|raw }}
+				</p>
+			</div>
 		</article>
 	{% endfor %}
 </div>
