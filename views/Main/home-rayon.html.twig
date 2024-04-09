@@ -103,8 +103,8 @@
             </div>
           {% endif %}
           <div class="home-page-article__review">
-            {% for posts in article.posts %}
-              {{ posts.content|raw }}
+            {% for post in article.posts|filter(post  => post.has('content')) %}
+              {{ post.content|raw }}
             {% endfor %}
           </div>
         </div>
