@@ -448,6 +448,8 @@ em {
   }
 
   .article__info-box__cart-button .btn {
+    background-color: var(--red);
+    border-color: var(--red);
     font-size: 1.5rem;
     padding: 2px 4px;
   }
