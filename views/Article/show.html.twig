@@ -142,14 +142,14 @@
           </li>
         {% endif %}
 
-        {% if article.has('bonus') %}
+        {% if article.posts %}
           <li role="presentation">
-            <a href="#bonus" aria-controls="bonus" role="tab" data-toggle="tab">Plus</a>
+            <a href="#plus" aria-controls="plus" role="tab" data-toggle="tab">Plus</a>
           </li>
         {% endif %}
 
         <li role="presentation">
-          <a href="#features" aria-controls="bonus" role="tab" data-toggle="tab">Infos techniques</a>
+          <a href="#features" aria-controls="features" role="tab" data-toggle="tab">Infos techniques</a>
         </li>
       </ul>
 
@@ -171,9 +171,12 @@
           </div>
         {% endif %}
 
-        {% if article.has('bonus') %}
-          <div role="tabpanel" class="article__block__content tab-pane" id="bonus">
-            {{ article.bonus|raw }}
+        {% if article.posts %}
+          <div role="tabpanel" class="article__block__content tab-pane" id="plus">
+            {% for post in article.posts|filter(post  => post.has('content')) %}
+              <h3>{{ post.title }}</h3>
+              {{ post.content|raw }}
+            {% endfor %}
           </div>
         {% endif %}
 
