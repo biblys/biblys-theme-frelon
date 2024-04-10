@@ -102,11 +102,12 @@
               {{ article.catchline|raw }}
             </div>
           {% endif %}
-          <div class="home-page-article__review">
-            {% for post in article.posts|filter(post  => post.has('content')) %}
-              {{ post.content|raw }}
-            {% endfor %}
-          </div>
+
+          {% if article.has('bonus') %}
+            <div class="home-page-article__bonus">
+              {{ article.bonus|raw }}
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
