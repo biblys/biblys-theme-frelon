@@ -265,6 +265,10 @@ em {
   text-align: center;
 }
 
+.site-footer .publisher-infos a {
+  color: var(--red);
+}
+
 .site-footer .footer-links ul {
   text-align: center;
 }
