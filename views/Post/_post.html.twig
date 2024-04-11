@@ -1,0 +1,11 @@
+{% if post.hasIllustration() %}
+  <div class="post-illustration">
+    <img src="{{ post.illustrationUrl }}" class="post-illustration-image" {% if post.has('illustration_legend') %} alt="{{ post.illustration_legend }}" {% endif %}>
+  </div>
+{% endif %}
+
+{% if post.has('content') %}
+  <div class="post-content">
+    {{ post.content|raw }}
+  </div>
+{% endif %}
