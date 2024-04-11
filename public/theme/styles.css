@@ -707,11 +707,11 @@ div.biblys-carousel .swiper-pagination-bullet-active {
   .home-page-article__bonus {
     margin-top: 32px;
     text-align: justify;
-    width: 384px;
+    width: 480px;
   }
 
   .home-page-article__bonus {
-    margin-left: 178px;
+    margin-left: 80px;
     margin-top: 48px;
   }
 }
