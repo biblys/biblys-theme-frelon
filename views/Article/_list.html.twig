@@ -11,9 +11,11 @@
 			</div>
 
 			<div class="article-in-list__infos">
-				<p class="article-in-list__infos__publication-date">
-					En librairie le {{ article.pubdate|date('d f Y') }}
-				</p>
+				{% if article.has('pubdate') %}
+					<p class="article-in-list__infos__publication-date">
+						En librairie le {{ article.pubdate|date('d f Y') }}
+					</p>
+				{% endif %}
 
 				<p>
 					<a href="{{ path('article_show', { slug: article.url }) }}">

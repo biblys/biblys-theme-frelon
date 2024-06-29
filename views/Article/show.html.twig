@@ -155,9 +155,11 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="article__block__content tab-pane active" id="summary">
-          {{ article.summary|raw }}
-        </div>
+        {% if article.has('summary') %}
+          <div role="tabpanel" class="article__block__content tab-pane active" id="summary">
+            {{ article.summary|raw }}
+          </div>
+        {% endif %}
 
         {% if article.has('contents') %}
           <div role="tabpanel" class="article__block__content tab-pane" id="contents">
