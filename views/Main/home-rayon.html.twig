@@ -96,13 +96,13 @@ dans l'intelligence du monde et de la vie. Extrait du livre Raconter, rédiger, 
   <section class="home-page-articles">
     {% for article in articles %}
       <div class="home-page-article">
-        {% if article.hasCover %}
+        {% if article.model|hasImage %}
           <a
             href="{{ path('article_show', {slug: article.url}) }}"
             class="home-page-article__cover"
           >
             <img
-              src="{{ article.coverUrl }}"
+              src="{{ article.model|imageUrl }}"
               alt="{{ article.title }}"
               class="home-page-article__cover-image"
             />
