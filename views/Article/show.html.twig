@@ -129,16 +129,16 @@
         <li role="presentation" class="active">
           <a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">Résumé</a>
         </li>
-
-        {% if article.has('contents') %}
-          <li role="presentation">
-            <a href="#contents" aria-controls="contents" role="tab" data-toggle="tab">Sommaire</a>
-          </li>
-        {% endif %}
-
+        
         {% if article.has('biography') %}
           <li role="presentation">
             <a href="#biography" aria-controls="biography" role="tab" data-toggle="tab">L'auteur</a>
+          </li>
+        {% endif %}
+
+        {% if article.has('contents') %}
+          <li role="presentation">
+            <a href="#contents" aria-controls="contents" role="tab" data-toggle="tab">Ce qu'ils en pensent</a>
           </li>
         {% endif %}
 
