@@ -1,38 +1,40 @@
 <div class="article-list">
-	{% for article in articles|filter(article => article.has('url')) %}
-		<article class="article-in-list">
-			<div class="article-in-list__cover">
-				{% if article.hasCover %}
-					{{ article.getCoverTag({
-						link: path('article_show', { slug: article.url }),
-						class: 'article-in-list__cover-image'
-					})|raw }}
-				{% endif %}
-			</div>
+  {% for article in articles|filter(article => article.has('url')) %}
+    <article class="article-in-list">
+      <div class="article-in-list__cover">
+        {% if article.hasCover %}
+          {{ article.getCoverTag({
+            link: path('article_show', { slug: article.url }),
+            class: 'article-in-list__cover-image'
+          })|raw }}
+        {% endif %}
+      </div>
 
-			<div class="article-in-list__infos">
-				{% if article.has('pubdate') %}
-					<p class="article-in-list__infos__publication-date">
-						En librairie le {{ article.pubdate|date('d f Y') }}
-					</p>
-				{% endif %}
+      <div class="article-in-list__infos">
+        {% if article.has('pubdate') %}
+          <p class="article-in-list__infos__publication-date">
+            En librairie le {{ article.pubdate|date('d f Y') }}
+          </p>
+        {% endif %}
 
-				<p>
-					<a href="{{ path('article_show', { slug: article.url }) }}">
-						{{ article.title }}
-					</a>
-				</p>
+        <p>
+          <a href="{{ path('article_show', { slug: article.url }) }}">
+            {{ article.title }}
+          </a>
+        </p>
 
-				<p>
-					{{ article.authors|authors('url') }}
-				</p>
+        <p>
+          {{ article.authors|authors('url') }}
+        </p>
 
-				<p>
-					{{ article.price|currency('EUR')|raw }}
-				</p>
-			</div>
-		</article>
-	{% endfor %}
+        {% if article.has('price') %}
+          <p>
+            {{ article.price|currency('EUR')|raw }}
+          </p>
+        {% endif %}
+      </div>
+    </article>
+  {% endfor %}
 </div>
 
 {% include 'AppBundle:Article:_list_pagination.html.twig' %}
