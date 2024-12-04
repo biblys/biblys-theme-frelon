@@ -8,7 +8,7 @@
 
   <article class="article">
     <div class="article__cover-column">
-      {% if article.hasImage %}
+      {% if article.model|hasImage %}
         {% include "AppBundle:Article:_cover.html.twig" with {
           article: article.model,
           class: "article__cover-image",
