@@ -2,11 +2,12 @@
   {% for article in articles|filter(article => article.has('url')) %}
     <article class="article-in-list">
       <div class="article-in-list__cover">
-        {% if article.hasCover %}
-          {{ article.getCoverTag({
+        {% if article.hasImage %}
+          {% include "AppBundle:Article:_cover.html.twig" with {
+            article: article.model,
+            class: "article-in-list__cover-image",
             link: path('article_show', { slug: article.url }),
-            class: 'article-in-list__cover-image'
-          })|raw }}
+          } %}
         {% endif %}
       </div>
 
