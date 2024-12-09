@@ -104,7 +104,9 @@
 
         {% if item %}
           <div class="article__info-box__price">
-            {{ item.selling_price|currency(true)|raw }}
+            {% if item.has(')selling_price') %}
+              {{ item.selling_price|currency(true)|raw }}
+            {% endif %}
           </div>
 
           <div class="article__info-box__cart-button">
