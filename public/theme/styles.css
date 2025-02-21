@@ -11,13 +11,12 @@
 
 html {
   font-family: 'Roboto', sans-serif;
-  font-size: 62.5%;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: normal;
   font-variation-settings: "wdth" 100;
@@ -73,7 +72,7 @@ em {
 
 .site-header .header-bar .social-networks .social-button .fa {
   color: black;
-  font-size: 2.5rem;
+  font-size: 1.5625rem;
   margin: 0 4px;
 }
 
@@ -89,7 +88,7 @@ em {
 .site-header .header-bar .search-engine-input {
   border: 1px solid var(--grey-25);
   border: var(--grey-border);
-  font-size: 1.6rem;
+  font-size: 1rem;
   margin-right: 4px;
   margin-top: 0;
   padding: 4px;
@@ -121,7 +120,7 @@ em {
 .site-header .navbar-toggle {
   float: left;
   font-weight: bold;
-  font-size: 1.75rem;
+  font-size: 1.09375rem;
   text-transform: uppercase;
 }
 
@@ -130,7 +129,7 @@ em {
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
   padding: 4px 0;
   text-transform: uppercase;
 }
@@ -156,7 +155,7 @@ em {
     border-radius: 0;
     flex-direction: row;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 0.9375rem;
     padding: 4px 0;
     text-transform: uppercase;
   }
@@ -189,7 +188,7 @@ em {
 
   .site-header .site-navigation .navigation-separator {
     display: inline-flex;
-    font-size: 2rem;
+    font-size: 1.25rem;
     padding: 8px 0;
   }
 
@@ -334,7 +333,7 @@ em {
 }
 
 .article .article__title {
-  font-size: 2rem;
+  font-size: 1.25rem;
   margin-top: 0;
   text-transform: uppercase;
 }
@@ -342,7 +341,7 @@ em {
 .article__info-box {
   border-top: 1px solid var(--grey-25);
   border-bottom: 1px solid var(--grey-25);
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   margin: 16px 0;
   position: relative;
   padding: 4px 0;
@@ -390,7 +389,7 @@ em {
 
 .article__block__title {
   color: var(--red);
-  font-size: 2rem;
+  font-size: 1.25rem;
   margin: 0 0 8px 0;
   text-transform: uppercase;
 }
@@ -413,7 +412,7 @@ em {
   }
 
   .article__infos-column h2 {
-    font-size: 1.5rem;
+    font-size: 0.9375rem;
     margin-bottom: 4px;
     text-transform: uppercase;
   }
@@ -454,7 +453,7 @@ em {
   .article__info-box__cart-button .btn {
     background-color: var(--red);
     border-color: var(--red);
-    font-size: 1.5rem;
+    font-size: 0.9375rem;
     padding: 2px 4px;
   }
 
@@ -544,7 +543,7 @@ em {
 /* # Article list */
 
 .collection-page__title {
-  font-size: 2.5rem;
+  font-size: 1.5625rem;
   margin: 8px 0 24px;
   text-align: center;
   text-transform: uppercase;
@@ -681,7 +680,7 @@ div.biblys-carousel .swiper-pagination-bullet-active {
 
 .home-page-article__title {
   margin-top: 0;
-  font-size: 2.5rem;
+  font-size: 1.5625rem;
 }
 
 .home-page-article__cover-image {
@@ -791,4 +790,3 @@ div.biblys-carousel .swiper-pagination-bullet-active {
     padding: 0;
   }
 }
-

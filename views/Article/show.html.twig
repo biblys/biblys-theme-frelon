@@ -22,7 +22,7 @@
         </p>
         <p id="files">
           {% for file in article.getDownloadableFiles('free') %}
-            <a href="{{ file.url }}" class="btn btn-default btn-sm" target="_blank" rel="noreferrer noopener">
+            <a href="{{ file.url }}" class="btn btn-light btn-sm" target="_blank" rel="noreferrer noopener">
               <span class="fa fa-file"></span>
               {{ file.title }}</a>
           {% endfor %}
