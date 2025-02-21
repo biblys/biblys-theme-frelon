@@ -88,53 +88,41 @@
         />
         <h1 class="site-title">{{ app.currentSite.site.title }}</h1>
       </a>
-      <nav class="navbar site-navigation" role="navigation">
-        <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#navbar"
-            aria-expanded="false"
-            aria-controls="navbar"
-          >
-            <span class="fa fa-bars fa-lg"></span>
-            Menu
-          </button>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul role="navigation" class="nav navbar-nav">
-            <li class="navigation-item">
-              <a class="navigation-item-link" href="/">Accueil</a>
+      <nav class="navbar navbar-expand-lg site-navigation">
+        <button class="navbar-toggler btn btn-light" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                aria-expanded="false">
+          <span class="fa fa-bars"></span>
+          Menu
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Accueil</a>
             </li>
-            <li class="navigation-separator">•</li>
-            <li class="navigation-item dropdown">
-              <a href="#" class="navigation-item-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                Catalogue <span class="caret"></span>
+            <li class="nav-item navigation-separator">•</li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                 aria-haspopup="true" aria-expanded="false">
+                Catalogue
               </a>
-              <ul class="dropdown-menu">
-                <li><a href="/collection/le-baiser-du-frelon-langue">Langue</a></li>
-                <li><a href="/collection/le-baiser-du-frelon-mieux-etre">Mieux-être</a></li>
-                <li><a href="/collection/le-baiser-du-frelon-jeunesse">Jeunesse</a></li>
-                <li><a href="/collection/le-baiser-du-frelon-littérature">Littérature</a></li>
-              </ul>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/collection/le-baiser-du-frelon-langue">Langue</a>
+                <a class="dropdown-item" href="/collection/le-baiser-du-frelon-mieux-etre">Mieux-être</a>
+                <a class="dropdown-item" href="/collection/le-baiser-du-frelon-jeunesse">Jeunesse</a>
+                <a class="dropdown-item" href="/collection/le-baiser-du-frelon-littérature">Littérature</a>
+              </div>
             </li>
-            <li class="navigation-separator">•</li>
-            <li class="navigation-item">
-              <a class="navigation-item-link" href="/blog/">Actualités</a>
+            <li class="nav-item navigation-separator">•</li>
+            <li class="nav-item">
+              <a class="nav-link" href="/page/Citations">Citations</a>
             </li>
-            {#         #}
-               <li class="navigation-separator">•</li>
-                    <li class="navigation-item">
-              <a class="navigation-item-link" href="/page/Citations">Citations</a>
+            <li class="nav-item navigation-separator">•</li>
+            <li class="nav-item">
+              <a class="nav-link" href="/page/la-maison">La Maison</a>
             </li>
-            <li class="navigation-separator">•</li>
-            <li class="navigation-item">
-              <a class="navigation-item-link" href="/page/la-maison">La Maison</a>
-            </li>
-            <li class="navigation-separator">•</li>
-            <li class="navigation-item">
-              <a class="navigation-item-link" href="/contact/">Contact</a>
+            <li class="nav-item navigation-separator">•</li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact/">Contact</a>
             </li>
           </ul>
         </div>
