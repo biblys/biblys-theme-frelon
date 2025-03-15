@@ -123,10 +123,10 @@ dans l'intelligence du monde et de la vie. Extrait du livre Raconter, rédiger, 
           </a>
         {% endif %}
         <div class="home-page-article__infos">
-          {% if article.has('cycle') %}
+          {% if article.model.cycle %}
             <p class="home-page-article__cycle">
-              <a href="{{ path('cycle_show', {slug: article.cycle.url}) }}">
-                {{ article.cycle.name }}
+              <a href="{{ path('cycle_show', {slug: article.model.cycle.url}) }}">
+                {{ article.model.cycle.name }}
               </a>
               {% if article.has('tome') %}
                 · tome {{ article.tome }}
