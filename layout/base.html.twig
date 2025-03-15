@@ -39,6 +39,9 @@
 
     <link rel="icon" type="image/png" href="/theme/favicon.png" />
 
+    <link rel="alternate" type="application/rss+xml" title="Les derniers billets du blog" href="{{ path('feed_blog') }}" />
+    <link rel="alternate" type="application/rss+xml" title="Les dernières parutions du catalogue" href="{{ path('feed_catalog') }}" />
+
     {% include "layout:_analytics.html.twig" %}
   </head>
   <body>
@@ -65,6 +68,10 @@
         </div>
 
         <div class="social-networks">
+          <a class="social-button" href="{{ path('feed_index') }}" aria-label="Flux RSS">
+            <i class="icon fa-solid fa-rss-square"></i>
+          </a>
+
           <a class="social-button" href="/mailing/subscribe" aria-label="Inscription à la newsletter">
             <i class="icon fa-solid fa-square-envelope"></i>
           </a>
