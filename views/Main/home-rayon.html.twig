@@ -7,12 +7,24 @@
   modifier le code ci-dessous
   #}
 
-  <div class="biblys-carousel swiper-container" data-autoplay-delay="4000">
-    <div class="swiper-wrapper">
-        
-          {# Bannière 0 #}
+  <div id="HomeCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
 
-      <div class="swiper-slide">
+    {# Indicateurs #}
+
+    <ol class="carousel-indicators mb-0">
+      <li data-target="#HomeCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#HomeCarousel" data-slide-to="1"></li>
+      <li data-target="#HomeCarousel" data-slide-to="2"></li>
+      <li data-target="#HomeCarousel" data-slide-to="3"></li>
+      <li data-target="#HomeCarousel" data-slide-to="4"></li>
+      <li data-target="#HomeCarousel" data-slide-to="5"></li>
+    </ol>
+
+    <div class="carousel-inner">
+
+      {# Bannière 0 #}
+
+      <div class="carousel-item active">
         <a href="/a/cecile-blow/boostez-votre-vitalite">
           <img
             class="carousel-image"
@@ -23,10 +35,10 @@
           />
         </a>
       </div>
-      
-       {# Bannière 1 #}
 
-      <div class="swiper-slide">
+      {# Bannière 1 #}
+
+      <div class="carousel-item">
         <a href="/a/cecile-blow/boostez-votre-vitalite">
           <img
             class="carousel-image"
@@ -37,12 +49,12 @@
           />
         </a>
       </div>
-      
-       {# Bannière 2 #}
 
-      <div class="swiper-slide">
+      {# Bannière 2 #}
+
+      <div class="carousel-item">
         <a href="https://assistanteplus.fr/cecile-blow-et-lart-de-la-vitalite-un-nouveau-regard-sur-la-sante/"
-             target="_blank">
+           target="_blank">
           <img
             class="carousel-image"
             src="https://lebaiserdufrelon.fr/media/carousel/02-l2-visuel-1920x559.jpg"
@@ -55,7 +67,7 @@
 
       {# Bannière 3 #}
 
-      <div class="swiper-slide">
+      <div class="carousel-item">
         <a href="/a/oderic-delefosse/raconter-rediger-lire-a-tout-age">
           <img
             class="carousel-image"
@@ -67,10 +79,10 @@ dans l'intelligence du monde et de la vie. Extrait du livre Raconter, rédiger, 
           />
         </a>
       </div>
-      
+
       {# Bannière 4 #}
 
-      <div class="swiper-slide">
+      <div class="carousel-item">
         <a
           href="https://assistanteplus.fr/le-baiser-du-frelon-pour-changer-notre-regard-sur-le-monde/"
           target="_blank"
@@ -87,7 +99,7 @@ dans l'intelligence du monde et de la vie. Extrait du livre Raconter, rédiger, 
 
       {# Bannière 5 #}
 
-      <div class="swiper-slide">
+      <div class="carousel-item">
         <a
           href="https://www.asforel.fr/2023/05/25/prix-academique-de-linnovation-2023"
           target="_blank"
@@ -95,9 +107,10 @@ dans l'intelligence du monde et de la vie. Extrait du livre Raconter, rédiger, 
           <img
             class="carousel-image"
             src="https://lebaiserdufrelon.fr/media/carousel/banniere-prix-academique-innovation.jpg"
-            alt="Prix academique de l'innovation 2023 décerné à Florence Gauthier, professeur des écoles, pour le projet "La dictée à l'adulte"
-            width="1024"
-            height="300"
+            alt="Prix academique de l'innovation 2023 décerné à Florence Gauthier, professeur des écoles, pour le projet "
+            La dictée à l'adulte"
+          width="1024"
+          height="300"
           />
         </a>
       </div>
